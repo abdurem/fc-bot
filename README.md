@@ -1,5 +1,7 @@
 # FC group bot
 
+For automatic GitHub Actions builds and Ubuntu deployment, see [DEPLOYMENT.md](DEPLOYMENT.md).
+
 A small Python/SQLite Telegram bot. No Python dependencies, domain, public port, or separate database server. All group members can record and delete matches and start seasons. Standings are independent for each group.
 
 ## Run

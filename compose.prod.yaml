@@ -1,0 +1,21 @@
+services:
+  bot:
+    image: ${FC_BOT_IMAGE:?Set FC_BOT_IMAGE to the published image digest}
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - league-data:/app/data
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    stop_grace_period: 45s
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
+volumes:
+  league-data:
+    name: ${FC_BOT_VOLUME:-fc-bot_league-data}
